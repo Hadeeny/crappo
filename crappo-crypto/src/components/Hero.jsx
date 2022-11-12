@@ -2,9 +2,9 @@ import hero from "../Crypto images/hero-img.png";
 import play from "../Crypto images/play.svg";
 const Hero = () => {
   return (
-    <div className="w-10/12 mx-auto flex flex-col lg:flex-row lg:justify-between items-center">
+    <div className="w-10/12 lg:mt-[5rem] mx-auto flex flex-col lg:flex-row lg:justify-between items-center">
       <div className="space-y-4">
-        <div className="bg-[#4B5563] px-4 py-2 lg:w-[23rem] rounded-3xl">
+        <div className="bg-[#4B5563] mt-20 lg:mt-0 px-4 py-2 lg:w-[23rem] rounded-3xl">
           <span className="bg-white mr-2 text-black rounded-2xl py-1 -ml-2 px-1">
             70% save
           </span>
@@ -19,7 +19,7 @@ const Hero = () => {
           buy and sell crytocurrencies by trusted 10M wallets, in over 100M
           transactions
         </p>
-        <button className="bg-[#3b82f6] flex items-center rounded-3xl px-8 py-2">
+        <button className="bg-[#3b82f6] flex items-center duration-500 hover:scale-[1.1] rounded-3xl px-6 py-1">
           Try for free
           <img
             alt="play"

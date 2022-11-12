@@ -4,6 +4,7 @@ import ethereum from "../Crypto images/ethereum.png";
 import litecoin from "../Crypto images/litecoin.png";
 import angle from "../Crypto images/angle.svg";
 import angle2 from "../Crypto images/angle2.svg";
+import Cal from "./Cal";
 
 const CoinCard = () => {
   const [currency, setCurrency] = useState([
@@ -44,26 +45,39 @@ const CoinCard = () => {
     );
   };
   return (
-    <section className="bg-[#F8F9FA]">
-      <h2 className="text-black">
-        Trade Securely And Market The High Growth Cryptocurrencies.
-      </h2>
-      <div>
-        {currency.map((curr) => (
-          <div
-            key={curr.id}
-            onClick={() => toggleView(curr.id)}
-            className={curr.reveal ? "card-toggle" : "card"}
-          >
-            <img src={curr.logo} className="crypto-card" alt="bitcoin" />
-            <h2>{curr.name}</h2>
-            <p>{curr.pitch}</p>
-            <button className={curr.reveal ? "show" : "hide"}>
-              <div>{curr.cta}</div>
-              <img src={curr.reveal ? `${angle2}` : `${angle}`} alt="angle" />
-            </button>
-          </div>
-        ))}
+    <section className="bg-[#F8F9FA] w-full flex flex-col items-center">
+      <Cal />
+      <div className="w-full">
+        <h2 className="text-black text-center px-2 text-2xl mt-24 mb-12">
+          Trade Securely And Market The High Growth Cryptocurrencies.
+        </h2>
+        <div className="flex flex-col w-11/12 mx-auto gap-y-8 lg:flex-row lg:justify-between items-center mb-10">
+          {currency.map((curr) => (
+            <div
+              key={curr.id}
+              onClick={() => toggleView(curr.id)}
+              className={`bg-white cursor-pointer ${
+                curr.reveal ? "bg-[#2B076E] text-white" : "text-black"
+              } space-y-8 p-8 flex flex-col rounded-xl items-center`}
+            >
+              <img src={curr.logo} className="crypto-card" alt="bitcoin" />
+              <h2>{curr.name}</h2>
+              <p className="text-center w-[18rem]">{curr.pitch}</p>
+              <button
+                className={`rounded-full ${
+                  curr.reveal
+                    ? "bg-blue-500 hover:animate-bounce flex p-4 space-x-3 items-center"
+                    : "border-black border-2 p-6"
+                } `}
+              >
+                <div className={`${curr.reveal ? "block" : "hidden"}`}>
+                  {curr.cta}
+                </div>
+                <img src={curr.reveal ? `${angle2}` : `${angle}`} alt="angle" />
+              </button>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

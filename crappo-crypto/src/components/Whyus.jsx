@@ -12,7 +12,7 @@ const Whyus = () => {
           laboriosam? Lorem ipsum dolor sit amet consectetur adipisicing elit.
           In, praesentium.
         </p>
-        <button className="bg-[#3b82f6] flex items-center rounded-3xl px-8 py-2">
+        <button className="bg-[#3b82f6] flex items-center rounded-full px-4 hover:scale-[1.1] duration-500 py-2">
           learn more
         </button>
       </div>
