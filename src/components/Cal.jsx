@@ -1,11 +1,16 @@
 import { useState } from "react";
+import {motion} from 'framer-motion'
 
 const Cal = () => {
     const [hashRate, setHashRate] = useState("");
     const [unit, setUnit] = useState("");
   
     return (
-        <div className='w-9/12 mx-auto -mt-44 lg:-mt-32'>
+        <motion.div
+        initial={{opacity: 0, scale: 0}}
+        whileInView={{opacity:1, scale: 1}}
+        transition={{duration: 2}}
+         className='w-9/12 mx-auto -mt-44 lg:-mt-32'>
             <div className="bg-white text-black rounded-2xl p-8">
         <form
           className="flex flex-col mb-6 lg:flex-row lg:justify-between space-y-4 lg:items-center"
@@ -43,7 +48,7 @@ const Cal = () => {
           Revenue will change based on mining difficulty and Ethereum price.
         </h3>
       </div>
-        </div>
+        </motion.div>
     )
 }
 

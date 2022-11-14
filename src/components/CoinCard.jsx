@@ -5,6 +5,7 @@ import litecoin from "../Crypto images/litecoin.png";
 import angle from "../Crypto images/angle.svg";
 import angle2 from "../Crypto images/angle2.svg";
 import Cal from "./Cal";
+import {motion} from 'framer-motion'
 
 const CoinCard = () => {
   const [currency, setCurrency] = useState([
@@ -45,12 +46,16 @@ const CoinCard = () => {
     );
   };
   return (
-    <section className="bg-[#F8F9FA] w-full flex flex-col items-center">
+    <motion.section className="bg-[#F8F9FA] w-full flex flex-col items-center">
       <Cal />
       <div className="w-full">
-        <h2 className="text-black text-center px-2 text-2xl mt-24 mb-12">
+        <motion.h2
+        initial={{opacity: 0, y: 40}}
+        whileInView={{opacity:1, y: 0}}
+        transition={{duration: 2}}
+         className="text-black text-center px-2 text-2xl mt-24 mb-12">
           Trade Securely And Market The High Growth Cryptocurrencies.
-        </h2>
+        </motion.h2>
         <div className="flex flex-col w-11/12 mx-auto gap-y-8 lg:flex-row lg:justify-between items-center mb-10">
           {currency.map((curr) => (
             <div
@@ -60,7 +65,7 @@ const CoinCard = () => {
                 curr.reveal ? "bg-[#2B076E] text-white" : "text-black"
               } space-y-8 p-8 flex flex-col rounded-xl items-center`}
             >
-              <img src={curr.logo} className="crypto-card" alt="bitcoin" />
+              <motion.img src={curr.logo} className="crypto-card" alt="bitcoin" />
               <h2>{curr.name}</h2>
               <p className="text-center w-[18rem]">{curr.pitch}</p>
               <button
@@ -73,13 +78,13 @@ const CoinCard = () => {
                 <div className={`${curr.reveal ? "block" : "hidden"}`}>
                   {curr.cta}
                 </div>
-                <img src={curr.reveal ? `${angle2}` : `${angle}`} alt="angle" />
+                <motion.img src={curr.reveal ? `${angle2}` : `${angle}`} alt="angle" />
               </button>
             </div>
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

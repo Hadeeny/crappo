@@ -1,6 +1,11 @@
+import {motion} from 'framer-motion'
+
 const Newsletter = () => {
   return (
-    <div className="w-11/12 mx-auto space-y-6 flex flex-col lg:flex-row lg:justify-between rounded-xl bg-blue-500 px-4 py-8 lg:py-16">
+    <motion.div 
+    initial={{opacity: 0, scale: 0}}
+    whileInView={{opacity:1, scale: 1}}
+    transition={{duration: 1}} className="w-11/12 mx-auto space-y-6 flex flex-col lg:flex-row lg:justify-between rounded-xl bg-blue-500 px-4 py-8 lg:py-16">
       <div className="space-y-4">
         <h2 className="text-bold text-xl">Start Mining Now</h2>
         <p className="text-sm">
@@ -19,7 +24,7 @@ const Newsletter = () => {
           Subscribe
         </button>
       </form>
-    </div>
+    </motion.div>
   );
 };
 

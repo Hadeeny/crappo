@@ -3,12 +3,14 @@ import logo from "../Crypto images/logo.svg";
 import visa from "../Crypto images/visa.png";
 import bitcoin from "../Crypto images/bitcoin.png";
 import mastercard from "../Crypto images/mastercard.png";
+import {motion} from 'framer-motion'
+
 
 const Footer = () => {
   return (
     <footer className='w-11/12 mt-16 mx-auto'>
       <div className="flex flex-col gap-y-8 items-center lg:items-start lg:flex-row lg:justify-between">
-        <img className='cursor-pointer' src={logo} alt="logo" />
+        <motion.img className='cursor-pointer' src={logo} alt="logo" />
         <div className="w-40 text-center lg:text-start space-y-4">
           <h4 className='font-bold text-lg'>Quick Links</h4>
           <ul className='space-y-2'>
@@ -52,9 +54,9 @@ const Footer = () => {
         <div className="w-50 text-center lg:text-start">
           <h4 className='font-bold text-lg'>We accept the following payment systems</h4>
           <div className="flex justify-center space-x-5 mt-8">
-            <img className='cursor-pointer hover:scale-[1.2] duration-500' src={visa} alt="visa" />
-            <img className='cursor-pointer hover:scale-[1.2] duration-500' src={mastercard} alt="mastercard" />
-            <img className='cursor-pointer hover:scale-[1.2] duration-500' src={bitcoin} alt="bitcoin" />
+            <motion.img className='cursor-pointer hover:scale-[1.2] duration-500' src={visa} alt="visa" />
+            <motion.img className='cursor-pointer hover:scale-[1.2] duration-500' src={mastercard} alt="mastercard" />
+            <motion.img className='cursor-pointer hover:scale-[1.2] duration-500' src={bitcoin} alt="bitcoin" />
           </div>
         </div>
       </div>
