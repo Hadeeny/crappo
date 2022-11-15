@@ -64,7 +64,7 @@ const Header = () => {
       </header>
       <motion.div
         className={`backdrop-blur-3xl
-        ${showNav && "left-[0%]"}  
+        ${showNav && "left-0"}  
         fixed top-0 lg:hidden w-full duration-500 left-[100%] z-[1000] h-[100vh]`}
       >
         <div className="flex flex-col gap-y-10">
