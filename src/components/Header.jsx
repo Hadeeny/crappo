@@ -1,137 +1,134 @@
 import { useState } from "react";
 import logo from "../Crypto images/logo.svg";
 import { motion } from "framer-motion";
-
 const Header = () => {
   const [showNav, setShowNav] = useState(false);
-  const itemVariants = {
-    open: {
-      opacity: 1,
-      y: 0,
-      transition: { type: "spring", stiffness: 300, damping: 24 },
-    },
-    closed: { opacity: 1, y: 0, transition: { duration: 0.2 } },
-  };
 
   return (
-    <motion.header
-      initial={true}
-      animate={showNav ? "open" : "closed"}
-      className={`${
-        showNav
-          ? "h-[100vh] bg-[#0D0D2B] fixed w-full"
-          : "w-full py-4 lg:py-0 bg-[#0D0D2B] fixed lg:top-0"
-      }`}
-    >
-      <motion.nav
-        className={`${
-          showNav
-            ? "h-[70%] flex flex-col-reverse py-4 justify-between"
-            : "w-11/12 mx-auto flex flex-row lg:py-4 lg:items-center items-center justify-between"
-        } `}
+    <>
+      <header className="w-full py-4 lg:py-0 bg-[#0D0D2B]">
+        <nav className="w-11/12 mx-auto flex flex-row lg:py-4 lg:items-center items-center justify-between">
+          <div>
+            <img className="cursor-pointer" src={logo} alt="logo" />
+          </div>
+          <div className="py-4 hidden lg:flex items-center space-x-14 justify-between">
+            <ul className="flex space-x-8 justify-between">
+              <li>
+                <a className="text-3xl lg:text-[1em]" href="#">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a className="text-3xl lg:text-[1em]" href="#">
+                  About
+                </a>
+              </li>
+              <li>
+                <a className="text-3xl lg:text-[1em]" href="#">
+                  Service
+                </a>
+              </li>
+              <li>
+                <a className="text-3xl lg:text-[1em] " href="#">
+                  Contact
+                </a>
+              </li>
+            </ul>
+            <ul className="flex gap-x-5 lg:space-x-6">
+              <li>
+                <a className="text-3xl lg:text-[1em]" href="#">
+                  Login
+                </a>
+              </li>
+              <li>
+                <a
+                  className="text-3xl lg:text-[1em] bg-blue-500 rounded-full py-2 px-4"
+                  href="#"
+                >
+                  Register
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div
+            onClick={() => {
+              setShowNav(!showNav);
+            }}
+            className={`flex items-end px-4 cursor-pointer flex-col lg:hidden`}
+          >
+            <div className="bg-white w-8 h-[3px]"></div>
+            <div className="bg-white my-2 w-8 h-[3px]"></div>
+            <div className="bg-white w-8 h-[3px]"></div>
+          </div>
+        </nav>
+      </header>
+      <motion.div
+        className={`backdrop-blur-3xl
+        ${showNav && "left-[0%]"}  
+        fixed top-0 lg:hidden w-full duration-500 left-[100%] z-[1000] h-[100vh]`}
       >
-        <div className={`${showNav && "hidden"}`}>
-          <img className="cursor-pointer" src={logo} alt="logo" />
-        </div>
-        <motion.div
-          className={`${
-            !showNav && "hidden"
-          } py-8 lg:py-4 flex flex-col gap-y-8 items-center justify-center  lg:space-x-14 lg:flex lg:flex-row lg:justify-between`}
-        >
-          <motion.ul
-            variants={{
-              open: {
-                clipPath: "inset(0% 0% 0% 0% round 10px)",
-                transition: {
-                  type: "spring",
-                  bounce: 0,
-                  duration: 0.7,
-                  delayChildren: 0.3,
-                  staggerChildren: 0.05,
-                },
-              },
-              closed: {
-                clipPath: "inset(10% 50% 90% 50% round 10px)",
-                transition: {
-                  type: "spring",
-                  bounce: 0,
-                  duration: 0.3,
-                },
-              },
+        <div className="flex flex-col gap-y-10">
+          <div
+            onClick={() => {
+              setShowNav(!showNav);
             }}
-            className="flex flex-col gap-y-8 lg:space-x-8 lg:flex lg:flex-row lg:justify-between"
+            className="flex cursor-pointer justify-end text-3xl p-8"
           >
-            <motion.li variants={itemVariants}>
-              <a className="text-3xl lg:text-[1em]" href="#">
-                Home
-              </a>
-            </motion.li>
-            <motion.li variants={itemVariants}>
-              <a className="text-3xl lg:text-[1em]" href="#">
-                About
-              </a>
-            </motion.li>
-            <motion.li variants={itemVariants}>
-              <a className="text-3xl lg:text-[1em]" href="#">
-                Service
-              </a>
-            </motion.li>
-            <motion.li variants={itemVariants}>
-              <a className="text-3xl lg:text-[1em] " href="#">
-                Contact
-              </a>
-            </motion.li>
-          </motion.ul>
-          <ul
-            variants={{
-              open: {
-                clipPath: "inset(0% 0% 0% 0% round 10px)",
-                transition: {
-                  type: "spring",
-                  bounce: 0,
-                  duration: 0.7,
-                  delayChildren: 0.3,
-                  staggerChildren: 0.05,
-                },
-              },
-              closed: {
-                clipPath: "inset(10% 50% 90% 50% round 10px)",
-                transition: {
-                  type: "spring",
-                  bounce: 0,
-                  duration: 0.3,
-                },
-              },
-            }}
-            className="flex gap-x-5 lg:space-x-6"
-          >
-            <motion.li variants={itemVariants}>
-              <a className="text-3xl lg:text-[1em]" href="#">
-                Login
-              </a>
-            </motion.li>
-            <motion.li variants={itemVariants}>
-              <a
-                className="text-3xl lg:text-[1em] bg-blue-500 rounded-full py-2 px-4"
-                href="#"
-              >
-                Register
-              </a>
-            </motion.li>
-          </ul>
-        </motion.div>
-        <div
-          onClick={() => {
-            setShowNav(!showNav);
-          }}
-          className={`flex items-end px-4 flex-col lg:hidden text-4xl`}
-        >
-          <div className="bg-white w-8 h-[3px]"></div>
-          <div className="bg-white my-2 w-8 h-[3px]"></div>
-          <div className="bg-white w-8 h-[3px]"></div>
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 512 512"
+              class="text-3xl absolute right-6 top-6 cursor-pointer "
+              height="1.5em"
+              width="1.5em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M289.94 256l95-95A24 24 0 00351 127l-95 95-95-95a24 24 0 00-34 34l95 95-95 95a24 24 0 1034 34l95-95 95 95a24 24 0 0034-34z"></path>
+            </svg>
+          </div>
+          <nav className="space-y-10">
+            <ul className="flex flex-col gap-y-10 items-center">
+              <li>
+                <a className="text-3xl lg:text-[1em]" href="#">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a className="text-3xl lg:text-[1em]" href="#">
+                  About
+                </a>
+              </li>
+              <li>
+                <a className="text-3xl lg:text-[1em]" href="#">
+                  Service
+                </a>
+              </li>
+              <li>
+                <a className="text-3xl lg:text-[1em] " href="#">
+                  Contact
+                </a>
+              </li>
+            </ul>
+            <ul className="flex justify-center gap-x-5 lg:space-x-6">
+              <li>
+                <a className="text-3xl lg:text-[1em]" href="#">
+                  Login
+                </a>
+              </li>
+              <li>
+                <a
+                  className="text-3xl lg:text-[1em] bg-blue-500 rounded-full py-2 px-4"
+                  href="#"
+                >
+                  Register
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
-      </motion.nav>
-    </motion.header>
+      </motion.div>
+    </>
   );
 };
 

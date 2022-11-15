@@ -53,7 +53,7 @@ const CoinCard = () => {
         initial={{opacity: 0, y: 40}}
         whileInView={{opacity:1, y: 0}}
         transition={{duration: 2}}
-         className="text-black text-center px-2 text-2xl mt-24 mb-12">
+         className="text-black text-center px-2 text-2xl mt-14 mb-12">
           Trade Securely And Market The High Growth Cryptocurrencies.
         </motion.h2>
         <div className="flex flex-col w-11/12 mx-auto gap-y-8 lg:flex-row lg:justify-between items-center mb-10">

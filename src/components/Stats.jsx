@@ -8,7 +8,7 @@ const Stats = () => {
       <motion.div 
       initial={{opacity: 0, y: 50}}
       whileInView={{opacity:1, y:0}}
-      transition={{duration: 1}}
+      transition={{duration: 0.7}}
       className="flex items-center lg:-mb-12 space-x-4">
         <motion.img alt="bars" className="p-2 bg-[#4B5563] rounded-full" src={bars} />
         <div className="">
@@ -20,7 +20,7 @@ const Stats = () => {
       <motion.div
         initial={{opacity: 0, y: 50}}
         whileInView={{opacity:1, y:0}}
-        transition={{duration: 1, delay: 1}} 
+        transition={{duration: 0.7, delay: 0.5}} 
       className="flex items-center space-x-4">
         <motion.img
           alt="triangle"
@@ -36,7 +36,7 @@ const Stats = () => {
       <motion.div
         initial={{opacity: 0, y: 50}}
         whileInView={{opacity:1, y:0}}
-        transition={{duration: 1, delay: 2}} 
+        transition={{duration: 0.7, delay: 1}} 
       className="flex items-center space-x-4">
         <motion.img alt="user" className="p-2 bg-[#4B5563] rounded-full" src={user} />
         <div className="">

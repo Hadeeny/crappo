@@ -3,13 +3,13 @@ import play from "../Crypto images/play.svg";
 import { motion } from "framer-motion";
 const Hero = () => {
   return (
-    <motion.div className="w-10/12 lg:mt-[5rem] mx-auto flex flex-col lg:flex-row lg:justify-between items-center">
+    <motion.div className="w-10/12 mt-[1rem] mx-auto flex flex-col lg:flex-row lg:justify-between items-center">
       <motion.div className="space-y-4">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 3, duration: 2 }}
-          className="bg-[#4B5563] mt-20 lg:mt-0 px-4 py-2 lg:w-[23rem] rounded-3xl"
+          transition={{ delay: 2, duration: 1 }}
+          className="bg-[#4B5563] mt-2 lg:mt-0 px-4 py-2 lg:w-[23rem] rounded-3xl"
         >
           <span className="bg-white mr-2 text-black rounded-2xl py-1 -ml-2 px-1">
             70% save
