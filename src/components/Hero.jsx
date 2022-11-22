@@ -23,7 +23,7 @@ const Hero = () => {
           className="lg:w-[25rem] w-[20rem]"
         >
           <h2 className="text-5xl">
-            Fastest & Secure Platform To Invest In Cryto
+            Fastest & Secure Platform To Invest In Crypto
           </h2>
         </motion.div>
         <motion.p
@@ -31,7 +31,7 @@ const Hero = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 2 }}
         >
-          buy and sell crytocurrencies by trusted 10M wallets, in over 100M
+          buy and sell cryptocurrencies by trusted 10M wallets, in over 100M
           transactions
         </motion.p>
         <motion.button
